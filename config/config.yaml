@@ -11,4 +11,4 @@ database:
 
 logging:
   level: debug
-  format: console
+  encoding: console

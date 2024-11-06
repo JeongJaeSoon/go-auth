@@ -11,4 +11,4 @@ database:
 
 logging:
   level: info
-  format: json
+  encoding: json

@@ -1,6 +1,7 @@
 package logging
 
 import (
+	"log"
 	"sync"
 
 	"github.com/JeongJaeSoon/go-auth/config"
@@ -19,24 +20,25 @@ func InitLogger(cfg config.LoggingConfig) {
 
 		if err := logLevel.UnmarshalText([]byte(cfg.Level)); err != nil {
 			logLevel = zap.InfoLevel
+			log.Printf("Invalid log level in config, using default level: %v", logLevel)
 		}
 
 		zapConfig := zap.Config{
-			Encoding:         cfg.Format,
+			Encoding:         cfg.Encoding,
 			Level:            zap.NewAtomicLevelAt(logLevel),
 			OutputPaths:      []string{"stdout"},
 			ErrorOutputPaths: []string{"stderr"},
 			EncoderConfig: zapcore.EncoderConfig{
 				TimeKey:        "timestamp",
 				LevelKey:       "level",
-				NameKey:        "logger",
 				CallerKey:      "caller",
 				MessageKey:     "message",
 				StacktraceKey:  "stacktrace",
 				LineEnding:     zapcore.DefaultLineEnding,
 				EncodeLevel:    zapcore.LowercaseLevelEncoder,
 				EncodeTime:     zapcore.ISO8601TimeEncoder,
-				EncodeDuration: zapcore.SecondsDurationEncoder,
+				EncodeDuration: zapcore.StringDurationEncoder,
+				EncodeCaller:   zapcore.ShortCallerEncoder,
 			},
 		}
 

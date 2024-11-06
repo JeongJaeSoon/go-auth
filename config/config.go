@@ -29,7 +29,7 @@ type DatabaseConfig struct {
 
 type LoggingConfig struct {
 	Level  string
-	Format string
+	Encoding string
 }
 
 func LoadConfig() (*Config, error) {
