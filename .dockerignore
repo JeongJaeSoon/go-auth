@@ -1,0 +1,28 @@
+# Ignore the vendor directory
+vendor/
+
+# Ignore Go workspace files
+go.work
+go.work.sum
+
+# Ignore the test directory
+test/
+
+# Ignore IDE/editor configurations
+.idea/
+.vscode/
+*.swp
+*.swo
+*.swn
+
+# Ignore macOS system files
+.DS_Store
+
+# Ignore environment variable files
+.env
+
+# Ignore PEM files
+*.pem
+
+# Ignore Redis database files
+*.rdb
