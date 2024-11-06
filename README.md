@@ -2,12 +2,61 @@
 
 go-auth is a simple authentication system built with Go. It includes a basic user model, authentication, and authorization.
 
+# Overview
+
+## Features
+
+- User authentication and authorization
+- gRPC and RESTful APIs
+- Middleware for handling authentication and authorization
+- Session management using Redis
+- Database integration with PostgreSQL
+
+## Prerequisites
+
+- Go 1.23.2
+- Docker
+- Docker Compose (for development)
+
+## Getting Started
+
+1. Clone the repository
+
+```bash
+git clone https://github.com/JeongJaeSoon/go-auth.git
+```
+
+2. Build the project
+
+```bash
+go build -o go-auth ./cmd/server/main.go
+```
+
+3. Run the project
+
+```bash
+./go-auth
+```
+
+# Development
+
+## Setup
+
+```bash
+# This section is under preparation and will be provided once ready.
+docker compose up --build
+```
+
 ## Directory Structure
+
 ```
 go-auth/
 ├── cmd/
 │   └── server/
 │       └── main.go          # Application entry point
+├── config/
+│   ├── config.yaml          # Configuration files
+│   └── config.go            # Configuration management
 ├── internal/
 │   ├── auth/
 │   │   ├── service.go       # Authentication service logic
@@ -15,20 +64,17 @@ go-auth/
 │   ├── db/
 │   │   └── db.go            # Database initialization and connection
 │   ├── logging/
-│   │   ├── logger.go        # Logger initialization and configuration
-│   │   └── config.go        # Logging configuration management
-│   ├── proto/
-│   │   └── auth.proto       # gRPC protocol definitions
+│   │   ├── config.go        # Logging configuration management
+│   │   └── logger.go        # Logger initialization and configuration
 │   ├── middleware/
 │   │   └── auth_middleware.go # Authentication middleware
+│   ├── proto/
+│   │   └── auth.proto       # gRPC protocol definitions
 │   └── utils/
 │       └── utils.go         # Utility functions
 ├── pkg/
 │   └── models/
 │       └── user.go          # User model definitions
-├── config/
-│   ├── config.yaml          # Configuration files
-│   └── config.go            # Configuration management
 ├── test/
 │   ├── integration/
 │   │   └── auth_integration_test.go # Integration tests
@@ -46,3 +92,4 @@ This project utilizes [Wire](https://github.com/google/wire) for dependency inje
 
 ```bash
 go install github.com/google/wire/cmd/wire@latest
+```
