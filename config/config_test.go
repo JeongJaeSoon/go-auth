@@ -20,6 +20,7 @@ func TestLoadConfig(t *testing.T) {
 	os.Setenv("ENV_DATABASE_PASSWORD", "test-password")
 	os.Setenv("ENV_DATABASE_NAME", "test-db")
 	os.Setenv("ENV_LOGGING_LEVEL", "debug")
+	os.Setenv("ENV_LOGGING_FORMAT", "json")
 
 	viper.SetConfigFile("config.yaml")
 
@@ -36,4 +37,5 @@ func TestLoadConfig(t *testing.T) {
 	assert.Equal(t, "test-password", config.Database.Password, "Database password should be test-password")
 	assert.Equal(t, "test-db", config.Database.Name, "Database name should be test-db")
 	assert.Equal(t, "debug", config.Logging.Level, "Logging level should be debug")
+	assert.Equal(t, "json", config.Logging.Format, "Logging format should be json")
 }

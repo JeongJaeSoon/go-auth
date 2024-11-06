@@ -9,20 +9,27 @@ import (
 )
 
 type Config struct {
-	Server struct {
-		Name string
-		Port int
-	}
-	Database struct {
-		Host     string
-		Port     int
-		User     string
-		Password string
-		Name     string
-	}
-	Logging struct {
-		Level string
-	}
+	Server   ServerConfig
+	Database DatabaseConfig
+	Logging  LoggingConfig
+}
+
+type ServerConfig struct {
+	Name string
+	Port int
+}
+
+type DatabaseConfig struct {
+	Host     string
+	Port     int
+	User     string
+	Password string
+	Name     string
+}
+
+type LoggingConfig struct {
+	Level  string
+	Format string
 }
 
 func LoadConfig() (*Config, error) {

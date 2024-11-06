@@ -64,7 +64,6 @@ go-auth/
 │   ├── db/
 │   │   └── db.go            # Database initialization and connection
 │   ├── logging/
-│   │   ├── config.go        # Logging configuration management
 │   │   └── logger.go        # Logger initialization and configuration
 │   ├── middleware/
 │   │   └── auth_middleware.go # Authentication middleware
