@@ -38,3 +38,10 @@ go-auth/
 ├── go.mod                   # Go module initialization file
 └── go.sum                   # Go module dependency checksum file
 ```
+
+## Dependency Injection
+
+This project utilizes [Wire](https://github.com/google/wire) for dependency injection. To install Wire, run:
+
+```bash
+go install github.com/google/wire/cmd/wire@latest
