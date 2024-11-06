@@ -1,0 +1,4 @@
+export ENV_SERVER_PORT=9999
+export ENV_DATABASE_USER="dev-user"
+export ENV_DATABASE_PASSWORD="dev-password"
+export ENV_LOGGING_LEVEL="debug"

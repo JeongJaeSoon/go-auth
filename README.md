@@ -27,7 +27,8 @@ go-auth/
 │   └── models/
 │       └── user.go          # User model definitions
 ├── config/
-│   └── config.yaml          # Configuration files
+│   ├── config.yaml          # Configuration files
+│   └── config.go            # Configuration management
 ├── test/
 │   ├── integration/
 │   │   └── auth_integration_test.go # Integration tests

@@ -1,0 +1,13 @@
+server:
+  name: production-go-auth
+  port: 8080
+
+database:
+  host: production-db-server
+  port: 5432
+  user: production-user
+  password: production-password
+  name: production-go-auth-db
+
+logging:
+  level: info
