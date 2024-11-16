@@ -28,7 +28,7 @@ type DatabaseConfig struct {
 }
 
 type LoggingConfig struct {
-	Level  string
+	Level    string
 	Encoding string
 }
 
