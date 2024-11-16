@@ -65,3 +65,7 @@ func LoadConfig() (*Config, error) {
 
 	return &config, nil
 }
+
+func ProvideLoggingConfig(cfg *Config) LoggingConfig {
+	return cfg.Logging
+}

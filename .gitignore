@@ -35,3 +35,6 @@ go.work.sum
 
 # Redis database files
 *.rdb
+
+# Ignore wire generated files
+wire_gen.go

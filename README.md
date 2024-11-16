@@ -29,7 +29,7 @@ go-auth is a simple authentication system built with Go. It includes a basic use
 2. Build the project
 
     ```bash
-    go build -o go-auth ./cmd/server/main.go
+    go build -o go-auth .
     ```
 
 3. Run the project
