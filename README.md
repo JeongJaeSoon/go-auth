@@ -53,7 +53,8 @@ docker compose up --build
 go-auth/
 ├── cmd/
 │   └── server/
-│       └── main.go          ## Application entry point
+│       └── main.go          ## Server entry point
+│       └── server.go        ## Server setup and routing
 ├── config/
 │   ├── config.yaml          ## Configuration files
 │   └── config.go            ## Configuration management
@@ -63,6 +64,9 @@ go-auth/
 │   │   └── handler.go       ## HTTP and gRPC handlers
 │   ├── db/
 │   │   └── db.go            ## Database initialization and connection
+│   ├── handler/
+│   │   └── health.go        ## Health check handler
+│   │   └── auth.go          ## Authentication handler
 │   ├── logging/
 │   │   └── logger.go        ## Logger initialization and configuration
 │   ├── middleware/
