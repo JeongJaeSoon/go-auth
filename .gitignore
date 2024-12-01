@@ -38,3 +38,6 @@ go.work.sum
 
 # Ignore wire generated files
 wire_gen.go
+
+# Ignore temporary files
+tmp/
