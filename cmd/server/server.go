@@ -2,9 +2,11 @@ package server
 
 import (
 	"github.com/JeongJaeSoon/go-auth/config"
+	"github.com/JeongJaeSoon/go-auth/internal/generated"
 	"github.com/JeongJaeSoon/go-auth/internal/handler"
 	"github.com/gofiber/fiber/v2"
 	"github.com/gofiber/fiber/v2/middleware/logger"
+	fibermiddleware "github.com/oapi-codegen/fiber-middleware"
 	"go.uber.org/zap"
 )
 
@@ -23,13 +25,21 @@ func NewServer(cfg *config.Config, zapLogger *zap.Logger) *Server {
 	// Add middleware
 	app.Use(logger.New())
 
+	// Add OpenAPI validation middleware
+	swagger, err := generated.GetSwagger()
+	if err != nil {
+		zapLogger.Fatal("Failed to load OpenAPI spec", zap.Error(err))
+	}
+	swagger.Servers = nil // Disable server validation
+	app.Use(fibermiddleware.OapiRequestValidator(swagger))
+
 	healthHandler := handler.NewHealthHandler(zapLogger)
 
 	return &Server{
 		app:           app,
 		cfg:           cfg,
 		logger:        zapLogger,
-		healthHandler: healthHandler,
+			healthHandler: healthHandler,
 	}
 }
 
