@@ -7,7 +7,7 @@ generate:
 # Generate OpenAPI code
 openapi:
 	mkdir -p internal/generated
-	oapi-codegen -config api/openapi/config.yaml api/openapi/health.yml
+	oapi-codegen -config api/openapi/config.yml api/openapi/health.yml
 
 # Run the application, ensuring wire_gen.go is included
 run: generate openapi
