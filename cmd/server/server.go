@@ -39,7 +39,7 @@ func NewServer(cfg *config.Config, zapLogger *zap.Logger) *Server {
 		app:           app,
 		cfg:           cfg,
 		logger:        zapLogger,
-			healthHandler: healthHandler,
+		healthHandler: healthHandler,
 	}
 }
 

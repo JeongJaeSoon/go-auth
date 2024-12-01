@@ -1,6 +1,6 @@
 package: generated
+output: internal/generated/api.gen.go
 generate:
   fiber-server: true
   models: true
   embedded-spec: true
-output: internal/generated/api.gen.go

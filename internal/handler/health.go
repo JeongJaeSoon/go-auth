@@ -3,7 +3,7 @@ package handler
 import (
 	"time"
 
-	"github.com/JeongJaeSoon/go-auth/internal/generated"
+	"github.com/JeongJaeSoon/go-auth/internal/generated/health"
 	"github.com/gofiber/fiber/v2"
 	"go.uber.org/zap"
 )
@@ -24,8 +24,7 @@ func (h *HealthHandler) Check(c *fiber.Ctx) error {
 
 	status := "OK"
 	now := time.Now()
-
-	response := generated.HealthResponse{
+	response := health.HealthResponse{
 		Status:    &status,
 		Timestamp: &now,
 	}

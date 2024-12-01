@@ -1,5 +1,6 @@
 # Binaries for programs and plugins
 *.exe
+*.exe~
 *.dll
 *.so
 *.dylib
@@ -36,8 +37,11 @@ go.work.sum
 # Redis database files
 *.rdb
 
-# Ignore wire generated files
+# Temporary files
+tmp/
+*.tmp
+*.temp
+
+# Ignore generated files
 wire_gen.go
 
-# Ignore temporary files
-tmp/
